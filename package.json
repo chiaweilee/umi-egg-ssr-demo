@@ -1,0 +1,23 @@
+{
+  "name": "umi-egg-ssr-demo",
+  "private": true,
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "start": "npm run dev",
+    "server": "npm run build && EGG_SERVER_ENV=prod egg-scripts start --title=umi-egg-ssr",
+    "stop": "egg-scripts stop --title=umi-egg-ssr",
+    "debug": "npm run build && egg-bin debug"
+  },
+  "egg": {
+    "declarations": true
+  },
+  "dependencies": {
+    "egg": "^3.17.5",
+    "egg-scripts": "^2.17.0",
+    "umi": "^3.5.20"
+  },
+  "devDependencies": {
+    "egg-bin": "6.5.2"
+  }
+}
