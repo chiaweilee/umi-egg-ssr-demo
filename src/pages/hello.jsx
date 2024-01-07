@@ -3,8 +3,9 @@ import React from 'react';
 class HomePage extends React.PureComponent {
   static getInitialProps = async (ctx) => {
     if (ctx.isServer) {
-      const { ssrConfig } = ctx;
+      const { ssrConfig, response } = ctx;
       return Promise.resolve({
+        response,
         startTime: ssrConfig.startTime,
         renderTime: (new Date).valueOf(),
       });
@@ -13,12 +14,12 @@ class HomePage extends React.PureComponent {
   };
 
   render() {
-    const { startTime, renderTime, history } = this.props;
+    const { startTime, renderTime, response } = this.props;
     return (
       <div>
         <div>This server started at {startTime}</div>
         <div>This page rendered at {renderTime}</div>
-        <div><a href="/hello">Say hello</a></div>
+        <div>This server said: {response}</div>
       </div>
     );
   }

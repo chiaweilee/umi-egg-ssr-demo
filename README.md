@@ -6,6 +6,7 @@ Using Umi@3 and latest Egg.
 .
 ├── app
 │   ├─── controller
+│   ├─── service
 │   └─── router.js
 ├── config
 ├── src
